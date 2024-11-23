@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register for the Event</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register for the Event</h2>
+    <form id="registrationForm">
+      <!-- Name Input -->
+      <label for="username">Name:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your full name" required>
+
+      <!-- Email Input -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <!-- Phone Number Input -->
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+    <!-- Placeholder for Displaying Submitted Data -->
+    <div id="submittedData" class="submitted-data"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
