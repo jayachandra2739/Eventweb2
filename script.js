@@ -26,7 +26,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   // Phone Number Validation: Only numbers, exactly 10 digits
   const phonePattern = /^\d{10}$/;
   if (!phonePattern.test(phoneInput)) {
-      phoneError.textContent = 'Phone number must be exactly 10 digits.';
+      phoneError.textContent = 'Phone number required.';
       isValid = false;
   }
 
