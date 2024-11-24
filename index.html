@@ -13,22 +13,24 @@
       <!-- Username -->
       <label for="username">Username:</label><br>
       <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+<span id="usernameError" class="error-message"></span><br>
 
       <!-- Phone Number -->
       <label for="phone">Phone Number:</label><br>
       <input type="text" id="phone" name="phone" placeholder="Enter phone number" maxlength="10" required><br><br>
+<span id="phoneError" class="error-message"></span><br>
 
       <!-- Email -->
       <label for="email">Email (Gmail):</label><br>
       <input type="email" id="email" name="email" placeholder="Enter Gmail address" required><br><br>
+<span id="emailError" class="error-message"></span><br>
 
       <!-- Submit Button -->
       <button type="submit" class="submit-button">Submit</button>
         <button id="cancelButton" class="cancel-button">Cancel</button>
     </div>
     </form>
-    <p id="errorMessage" class="error-message"></p>
-
+    
     <!-- Placeholder for Displaying Submitted Data -->
     <div id="submittedData" class="submitted-data"></div>
   </div>
