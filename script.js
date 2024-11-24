@@ -1,25 +1,47 @@
-// Select the form and submitted data container
-const registrationForm = document.getElementById('registrationForm');
-const submittedData = document.getElementById('submittedData');
-
-// Add an event listener to handle form submission
-registrationForm.addEventListener('submit', function (event) {
-  // Prevent the default form submission behavior
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
-  // Get user input values
-  const username = document.getElementById('username').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
+  const usernameInput = document.getElementById('username').value.trim();
+  const phoneInput = document.getElementById('phone').value.trim();
+  const emailInput = document.getElementById('email').value.trim();
+  const errorMessage = document.getElementById('errorMessage');
 
-  // Display the collected data
-  submittedData.innerHTML = `
-    <h3>Thank You for Registering!</h3>
-    <p><strong>Name:</strong> ${username}</p>
-    <p><strong>Email:</strong> ${email}</p>
-    <p><strong>Phone Number:</strong> ${phone}</p>
-  `;
+  // Username Validation: First letter must be capital
+  const usernamePattern = /^[A-Z][a-zA-Z0-9_]*$/;
+  if (!usernamePattern.test(usernameInput)) {
+      errorMessage.textContent = 'Username must start with a capital letter.';
+      return;
+  }
+
+  // Phone Number Validation: Only numbers, exactly 10 digits
+  const phonePattern = /^\d{10}$/;
+  if (!phonePattern.test(phoneInput)) {
+      errorMessage.textContent = 'Phone number must be exactly 10 digits.';
+      return;
+  }
+
+  // Email Validation: Must end with "@gmail.com"
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  if (!emailPattern.test(emailInput)) {
+      errorMessage.textContent = 'Email must be a valid Gmail address (e.g., example@gmail.com).';
+      return;
+  }
+
+  // If all validations pass
+  errorMessage.textContent = ''; // Clear error messages
+  alert('Registration successful!');
+  // You can process form data or submit it to a server here
+});
+
+  
+  
+  document.getElementById('cancelButton').addEventListener('click', function() {
+    if (confirm('Are you sure you want to close this tab?')) {
+        window.close();
+    }
+});
 
   // Optionally, clear the form fields after submission
   registrationForm.reset();
-});
+
+   
